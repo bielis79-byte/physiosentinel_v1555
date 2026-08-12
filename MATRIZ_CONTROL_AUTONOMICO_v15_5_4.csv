@@ -1,0 +1,39 @@
+﻿Vector,Variable,Peso,Rol,Dirección/uso
+V · Vagal,RMSSD,1.0,Primaria,↑ respecto al basal apoya modulación vagal rápida
+V · Vagal,SD1,1.0,Primaria,↑ respecto al basal apoya modulación vagal rápida
+V · Vagal,HF_DOM_PCT,0.9,Primaria,Mayor dominancia HF apoya componente respiratorio/vagal
+V · Vagal,pNN50,0.55,Secundaria,Apoyo vagal; menor peso por redundancia con RMSSD/SD1
+V · Vagal,HF consenso (HF/HF_LS/HF_AR/HF_WAV_MEAN),0.7,Consenso,Mediana de Z entre métodos; evita cuatro votos separados
+V · Vagal,IDX_Vagal,0.4,Índice integrado,Confirmación; peso reducido para evitar doble conteo
+S · Alerta/barorreflejo,DFA_alpha1,0.75,Primaria,>1.0–1.15 apoya organización de alerta; <0.5 se deriva a desacoplamiento; no “más=mejor”
+S · Alerta/barorreflejo,LF_DOM_PCT,1.0,Primaria,"Dominancia LF como organización rápida/barorrefleja, no simpático puro"
+S · Alerta/barorreflejo,MeanHR,0.55,Secundaria,↑ intra-paciente apoya movilización rápida si converge
+S · Alerta/barorreflejo,LF_HF,0.45,Contextual,Sólo contextual; nunca se interpreta aisladamente como balance simpático-vagal
+S · Alerta/barorreflejo,LF consenso (LF/LF_LS/LF_AR/LF_WAV_MEAN),0.55,Consenso,Convergencia entre estimadores LF
+S · Alerta/barorreflejo,IDX_Rigidez,0.5,Índice integrado,↑ apoya mantenimiento/rigidez; peso reducido por doble conteo
+L · Regulación lenta,VLF_DOM_PCT,1.0,Primaria,Dominancia lenta relativa
+L · Regulación lenta,VLF consenso (VLF/VLF_LS/VLF_AR/VLF_WAV_MEAN),0.75,Consenso,Convergencia de potencia VLF entre métodos
+L · Regulación lenta,DFA_alpha2,0.5,Secundaria,Organización de correlaciones largas; se interpreta longitudinalmente
+L · Regulación lenta,Hurst,0.35,Secundaria,Persistencia de largo alcance; no se trata como “más saludable”
+L · Regulación lenta,IDX_Regulacion_Lenta,0.45,Índice integrado,Confirmación; peso reducido para evitar doble conteo
+C · Complejidad/movilidad,SampEn,0.85,Primaria,"Complejidad irregular; se interpreta respecto al basal, no como “más=mejor”"
+C · Complejidad/movilidad,DispEn,0.65,Primaria,Diversidad de patrones
+C · Complejidad/movilidad,D2,0.6,Primaria,Dimensionalidad dinámica
+C · Complejidad/movilidad,Lyapunov_LLE,0.45,Secundaria,Sensibilidad local; extremos se interpretan con cautela
+C · Complejidad/movilidad,WAV_ENTROPY_GLOBAL,0.75,Primaria,Distribución tiempo-frecuencia; alta + reserva baja puede indicar desacoplamiento
+C · Complejidad/movilidad,WAV_TRANSITIONS_PER_MIN,0.6,Primaria,Movilidad entre regímenes; excesiva sin coherencia puede ser ineficiente
+C · Complejidad/movilidad,HVG_graph_score_small_world,0.75,Primaria,Organización local-global de red
+C · Complejidad/movilidad,HVG_clustering,0.45,Secundaria,Organización local de red
+C · Complejidad/movilidad,MSE resumen 1–5/6–10/11–20,0.45,Resumen multiescala,Tres bloques agregados; evita 20 votos correlacionados
+C · Complejidad/movilidad,MDE resumen 1–5/6–10/11–20,0.45,Resumen multiescala,Tres bloques agregados; evita 20 votos correlacionados
+C · Complejidad/movilidad,RQA (DET y Lmax/N),0.4,Secundaria,Recurrencia/rigidez; se usa de forma inversa dentro de C y directa como evidencia de rigidez
+C · Complejidad/movilidad,Tipo de atractor,contexto,Estructural,Ciclo límite/punto fijo/complejo sólo refuerzan una regla si convergen con el resto
+C · Complejidad/movilidad,IDX_Complejidad,0.35,Índice integrado,Confirmación con peso reducido
+R · Reserva/amplitud,SDNN,1.0,Primaria,Reserva global de variabilidad
+R · Reserva/amplitud,SD2,0.9,Primaria,Variabilidad de largo eje Poincaré
+R · Reserva/amplitud,TOTAL consenso (TOTAL/TOTAL_LS/TOTAL_AR),0.8,Consenso,Potencia total agregada entre métodos
+R · Reserva/amplitud,IDX_Amplitud,0.45,Índice integrado,Confirmación con peso reducido
+Q · Calidad/contexto,N_RRi,control,Calidad,Reduce confianza si el registro es corto
+Q · Calidad/contexto,Duration_s,control,Calidad,Reduce confianza si la ventana temporal es insuficiente
+Q · Calidad/contexto,Artefactos_pct,control,Calidad,Reduce confianza al aumentar artefactos
+Q · Calidad/contexto,IDX_Confianza,control,Calidad,Modula confianza si está disponible; no decide el estado

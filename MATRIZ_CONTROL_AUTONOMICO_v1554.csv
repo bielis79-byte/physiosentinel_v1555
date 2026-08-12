@@ -1,0 +1,53 @@
+﻿Variable,Vector,Familia,Rol,Peso,Transformacion,Zona
+RMSSD,V,HRV temporal,Primaria,1.3,z_pos,Relativa al basal individual; ↑ apoya modulación vagal rápida
+SD1,V,Poincaré,Primaria,1.2,z_pos,Relativa al basal individual; ↑ apoya variabilidad rápida
+HF_DOM_PCT,V,Wavelet/dominancia,Primaria,1.0,z_pos,↑ predominio respiratorio/vagal relativo
+HF,V,Espectral Welch,Primaria,0.75,z_pos,Modulación HF; interpretar con respiración
+pNN50,V,HRV temporal,Apoyo,0.65,z_pos,↑ variabilidad rápida; sin corte universal
+HF_LS,V,Espectral Lomb-Scargle,Corroboración,0.25,z_pos,Corrobora HF sin contar como voto equivalente
+HF_AR,V,Espectral AR,Corroboración,0.2,z_pos,Corrobora HF
+HF_WAV_MEAN,V,Wavelet,Corroboración,0.25,z_pos,Corrobora presencia HF tiempo-frecuencia
+IDX_Vagal,V,Índice fisiológico,Integrada,0.55,z_pos,Resumen; peso reducido para evitar doble conteo
+MeanHR,S,HRV temporal,Primaria,0.7,z_pos,↑ respecto al basal apoya movilización rápida si converge
+DFA_alpha1,S,Fractal,Primaria,1.15,dfa1_alert,No monotónica: >1.0 aumenta señal de organización/alerta; <0.5 se reserva para desacoplamiento
+LF_DOM_PCT,S,Wavelet/dominancia,Primaria,0.9,z_pos,LF relativo/barorreflejo; no equivale a simpático neural
+LF_HF,S,Espectral,Apoyo,0.55,z_pos,Descriptor mixto; sólo válido dentro del patrón multivariado
+LF,S,Espectral Welch,Apoyo,0.45,z_pos,Oscilación LF/barorrefleja mixta
+LF_LS,S,Espectral Lomb-Scargle,Corroboración,0.18,z_pos,Corrobora LF
+LF_AR,S,Espectral AR,Corroboración,0.15,z_pos,Corrobora LF
+LF_WAV_MEAN,S,Wavelet,Corroboración,0.18,z_pos,Corrobora presencia LF dinámica
+IDX_Rigidez,S,Índice fisiológico,Integrada,0.6,z_pos,↑ rigidez apoya predominio de drive/menor flexibilidad; peso reducido
+VLF_DOM_PCT,L,Wavelet/dominancia,Primaria,1.15,z_pos,↑ predominio relativo de mecanismos lentos
+VLF,L,Espectral Welch,Primaria,0.8,z_pos,Potencia lenta; interpretar longitudinalmente
+DFA_alpha2,L,Fractal,Primaria,0.75,z_pos,Organización de largo plazo; no “más = mejor”
+Hurst,L,Fractal,Apoyo,0.55,z_pos,Persistencia temporal; no equivale a calidad fisiológica
+VLF_LS,L,Espectral Lomb-Scargle,Corroboración,0.25,z_pos,Corrobora VLF
+VLF_AR,L,Espectral AR,Corroboración,0.2,z_pos,Corrobora VLF
+VLF_WAV_MEAN,L,Wavelet,Corroboración,0.25,z_pos,Corrobora VLF tiempo-frecuencia
+IDX_Regulacion_Lenta,L,Índice fisiológico,Integrada,0.55,z_pos,Resumen lento; peso reducido para evitar doble conteo
+SampEn,C,Entropía,Primaria,0.95,z_pos,↑ complejidad local relativa; extremos requieren contexto
+DispEn,C,Entropía,Primaria,0.75,z_pos,Diversidad de patrones
+D2,C,Dinámica no lineal,Primaria,0.7,z_pos,Dimensionalidad efectiva; interpretar longitudinalmente
+Lyapunov_LLE,C,Dinámica no lineal,Primaria,0.7,z_stability,No monotónica: penaliza desviaciones extremas respecto al patrón individual
+WAV_ENTROPY_GLOBAL,C,Wavelet,Primaria,1.0,z_pos,Distribución tiempo-frecuencia; alta con TOTAL muy bajo puede indicar desacoplamiento
+WAV_TRANSITIONS_PER_MIN,C,Wavelet,Primaria,0.85,z_pos,Movilidad entre regímenes; exceso con topología pobre puede ser desorganización
+HVG_graph_score_small_world,C,HVG/topología,Primaria,1.05,z_pos,↑ organización local-global relativa
+HVG_clustering,C,HVG/topología,Apoyo,0.65,z_pos,Coherencia local/topológica
+HVG_path_length,C,HVG/topología,Apoyo,0.45,z_neg,Caminos excesivos reducen integración global
+HVG_compactness_index,C,HVG/topología,Apoyo,0.45,z_pos,Compacidad relativa del grafo
+REC,C,RQA,Apoyo,0.35,z_pos,Recurrencia; no equivale por sí sola a mejor organización
+DET,C,RQA,Apoyo,0.45,z_stability,No monotónica; desviaciones extremas pueden reflejar rigidez o desorganización
+Lmax_rel,C,RQA,Apoyo,0.5,z_stability,Lmax/N; normalizado por longitud del registro
+MSE_short,C,MSE resumen,Apoyo,0.35,z_pos,Media escalas 1–5
+MSE_mid,C,MSE resumen,Apoyo,0.35,z_pos,Media escalas 6–10
+MSE_long,C,MSE resumen,Apoyo,0.35,z_pos,Media escalas 11–20
+MDE_short,C,MDE resumen,Apoyo,0.3,z_pos,Media escalas 1–5
+MDE_mid,C,MDE resumen,Apoyo,0.3,z_pos,Media escalas 6–10
+MDE_long,C,MDE resumen,Apoyo,0.3,z_pos,Media escalas 11–20
+IDX_Complejidad,C,Índice fisiológico,Integrada,0.5,z_pos,Resumen de complejidad; peso reducido
+SDNN,R,HRV temporal,Primaria,1.15,z_pos,Reserva/amplitud global relativa
+SD2,R,Poincaré,Primaria,1.0,z_pos,Variabilidad de largo eje / amplitud global
+TOTAL,R,Espectral Welch,Primaria,0.95,z_pos,Potencia total; TOTAL muy bajo es señal de baja reserva
+TOTAL_LS,R,Espectral Lomb-Scargle,Corroboración,0.25,z_pos,Corrobora potencia total
+TOTAL_AR,R,Espectral AR,Corroboración,0.2,z_pos,Corrobora potencia total
+IDX_Amplitud,R,Índice fisiológico,Integrada,0.55,z_pos,Resumen de amplitud; peso reducido
